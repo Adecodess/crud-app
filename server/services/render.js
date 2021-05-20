@@ -3,7 +3,7 @@ const axios = require("axios");
 exports.homeRoutes = (req, res) => {
   // make a get request to /api/users
   axios
-    .get("http://localhost:3000/api/users")
+    .get("https://mysterious-atoll-92133.herokuapp.com/api/users")
     .then(function (response) {
       res.render("index", { users: response.data });
     })
@@ -17,7 +17,7 @@ exports.add_user = (req, res) => {
 exports.update_user = (req, res) => {
   // get user by id and update
   axios
-    .get("http://localhost:3000/api/users", {
+    .get("https://mysterious-atoll-92133.herokuapp.com/api/users", {
       params: { id: req.query.id },
     })
     .then(function (userdata) {
